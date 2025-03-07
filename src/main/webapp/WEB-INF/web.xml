@@ -9,14 +9,27 @@
     </welcome-file-list>
 
     <servlet>
-        <servlet-name>testServlet</servlet-name>
-        <servlet-class>com.weibin.controller.TestController</servlet-class>
-        <load-on-startup>1</load-on-startup>
+        <servlet-name>springmvc</servlet-name>
+        <!--
+            DispatcherServlet是Spring MVC最核心的对象
+            DispatcherServlet用于拦截http请求，
+            并根据请求的URL调用与之对应的Controller方法，来完成http请求的处理
+        -->
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- applicationContext.xml -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:applicationContext.xml</param-value>
+        </init-param>
+        <!--
+            在Web应用启动时自动创建Spring IOC容器，
+            并初始化DispatcherServlet
+        -->
+        <load-on-startup>0</load-on-startup>
     </servlet>
-
     <servlet-mapping>
-        <servlet-name>testServlet</servlet-name>
-        <url-pattern>/test/hello</url-pattern>
+        <servlet-name>springmvc</servlet-name>
+        <!-- "/" 代表拦截所有请求 -->
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
-
 </web-app>
