@@ -22,9 +22,9 @@
 
     <repositories>
         <repository>
-            <id>aliyun</id>
-            <name>aliyun</name>
-            <url>https://maven.aliyun.com/repository/public</url>
+            <id>huaweicloud</id>
+            <name>huaweicloud</name>
+            <url>https://mirrors.huaweicloud.com/repository/maven/</url>
         </repository>
     </repositories>
 
@@ -36,6 +36,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Spring Web MVC -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>

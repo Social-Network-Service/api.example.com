@@ -1,1 +1,1 @@
-# social-api
+# api.social.com
