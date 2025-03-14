@@ -17,7 +17,7 @@
         @Controller 用于描述Spring MVC控制器类，通常放在*Controller类上
         @Component
     -->
-    <context:component-scan base-package="com.weibin.ssm"></context:component-scan>
+    <context:component-scan base-package="com.weibin"></context:component-scan>
     <!-- 启用Spring MVC的注解开发模式 -->
     <mvc:annotation-driven>
         <mvc:message-converters>

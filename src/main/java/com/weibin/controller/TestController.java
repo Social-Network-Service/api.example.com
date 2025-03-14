@@ -1,4 +1,4 @@
-package com.weibin.ssm.controller;
+package com.weibin.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
