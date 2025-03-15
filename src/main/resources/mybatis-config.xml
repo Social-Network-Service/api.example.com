@@ -4,23 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <settings>
+        <!-- 开启【数据库字段名】与【实体驼峰名字】的自动转换 -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
-
-    <environments default="development">
-        <environment id="development">
-            <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url"
-                          value="jdbc:mysql://localhost:3306/social.com?useUnicode=true&amp;characterEncoding=UTF-8"/>
-                <property name="username" value="root"/>
-                <property name="password" value="123456"/>
-            </dataSource>
-        </environment>
-    </environments>
-
-    <mappers>
-        <mapper class="com.weibin.mapper.VideoMapper"/>
-    </mappers>
 </configuration>

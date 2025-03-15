@@ -1,16 +1,16 @@
 package com.weibin.entity;
 
 public class Video {
-    private Integer id;
+    private Integer videoId;
     private String videoName;
     private String videoUrl;
 
-    public Integer getId() {
-        return id;
+    public Integer getVideoId() {
+        return videoId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setVideoId(Integer videoId) {
+        this.videoId = videoId;
     }
 
     public String getVideoName() {

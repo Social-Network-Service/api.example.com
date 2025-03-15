@@ -41,7 +41,7 @@ public class VideoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> update(@PathVariable Integer id, @RequestBody Video video) {
-        video.setId(id);
+        video.setVideoId(id);
         int result = videoService.update(video);
         if (result > 0) {
             return ResponseEntity.ok().build();
