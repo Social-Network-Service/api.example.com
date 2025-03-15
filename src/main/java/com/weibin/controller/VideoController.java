@@ -10,6 +10,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/video")
+//@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:8081"}, allowCredentials = "true")
+@CrossOrigin(origins = "*")
 public class VideoController {
     
     @Resource
