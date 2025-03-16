@@ -3,8 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.weibin.mapper.VideoMapper">
+    <!-- ResultMap 结果映射-->
     <resultMap id="VideoResultMap" type="com.weibin.entity.Video">
-        <result property="videoId" column="video_id"/>
+        <!--设置主键字段与属性映射-->
+        <id property="videoId" column="video_id"/>
+        <!--设置非主键字段与属性映射-->
         <result property="videoName" column="video_name"/>
         <result property="videoUrl" column="video_url"/>
     </resultMap>
