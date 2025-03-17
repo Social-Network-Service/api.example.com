@@ -35,4 +35,14 @@
     <delete id="delete" parameterType="java.lang.Integer">
         DELETE FROM video WHERE video_id = #{id}
     </delete>
+
+    <select id="findByPage" resultMap="VideoResultMap">
+        SELECT * FROM video
+        ORDER BY video_id DESC
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM video
+    </select>
 </mapper>
