@@ -8,8 +8,13 @@
         <!--设置主键字段与属性映射-->
         <id property="videoId" column="video_id"/>
         <!--设置非主键字段与属性映射-->
-        <result property="videoName" column="video_name"/>
-        <result property="videoUrl" column="video_url"/>
+        <result property="courseId" column="course_id"/>
+        <result property="title" column="title"/>
+        <result property="url" column="url"/>
+        <result property="duration" column="duration"/>
+        <result property="sortOrder" column="sort_order"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
     </resultMap>
 
     <select id="findAll" resultMap="VideoResultMap">
@@ -21,14 +26,17 @@
     </select>
 
     <insert id="insert" parameterType="com.weibin.entity.Video" useGeneratedKeys="true" keyProperty="videoId">
-        INSERT INTO video (video_name, video_url)
-        VALUES (#{videoName}, #{videoUrl})
+        INSERT INTO video (course_id, title, url, duration, sort_order)
+        VALUES (#{courseId}, #{title}, #{url}, #{duration}, #{sortOrder})
     </insert>
 
     <update id="update" parameterType="com.weibin.entity.Video">
         UPDATE video
-        SET video_name = #{videoName},
-            video_url = #{videoUrl}
+        SET course_id = #{courseId},
+            title = #{title},
+            url = #{url},
+            duration = #{duration},
+            sort_order = #{sortOrder}
         WHERE video_id = #{videoId}
     </update>
 
