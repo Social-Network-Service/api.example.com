@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/sys")
 @CrossOrigin(origins = {"http://localhost:3000", "https://localhost:3000"}, allowCredentials = "true")
-public class UserController {
+public class SystemController {
 
     // 登陆过期时间60秒
     private static int expirationTime = 60;
