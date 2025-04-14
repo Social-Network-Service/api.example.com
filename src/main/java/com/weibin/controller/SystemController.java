@@ -16,13 +16,13 @@ public class SystemController {
     // 登陆过期时间60秒
     private static int expirationTime = 60;
 
-    @RequestMapping("/registry")
-    public Object register(String username, String password, String verifyCode, HttpServletRequest request) {
-        return Result.success("用户创建成功");
-    }
-
     @RequestMapping("/login")
     public Object login(String username, String password, HttpServletRequest request, HttpServletResponse response) {
         return Result.success("用户登录成功");
+    }
+
+    @RequestMapping("/registry")
+    public Object register(String username, String password, String verifyCode, HttpServletRequest request) {
+        return Result.success("用户创建成功");
     }
 }

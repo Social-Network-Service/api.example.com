@@ -3,26 +3,29 @@ package com.weibin.entity;
 import java.util.Date;
 
 public class User {
-    private int userId;
-    private String username;
+    private Long userId;
+    private String userName;
     private String password;
-    private Date createTime;
-    private int salt;
+    private String email;
+    private String phone;
+    private Integer status;
+    private Date createdAt;
+    private Date updatedAt;
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -33,29 +36,57 @@ public class User {
         this.password = password;
     }
 
-    public int getSalt() {
-        return salt;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSalt(int salt) {
-        this.salt = salt;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "userId=" + userId +
-                ", username='" + username + '\'' +
+                ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
-                ", createTime=" + createTime +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", status=" + status +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
                 '}';
     }
 }
