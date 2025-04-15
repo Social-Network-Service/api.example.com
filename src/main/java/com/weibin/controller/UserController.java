@@ -1,7 +1,10 @@
 package com.weibin.controller;
 
 import com.weibin.entity.User;
+import com.weibin.entity.Video;
 import com.weibin.service.UserService;
+import com.weibin.vo.PageResult;
+import com.weibin.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired
@@ -16,8 +20,9 @@ public class UserController {
 
     // 获取所有用户列表
     @GetMapping("/all")
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    public Result<List<User>> getAllUsers() {
+        List<User> videos = userService.getAllUsers();
+        return Result.success(videos);
     }
 
     // 获取单个用户信息
