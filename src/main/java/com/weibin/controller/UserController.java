@@ -1,9 +1,7 @@
 package com.weibin.controller;
 
 import com.weibin.entity.User;
-import com.weibin.entity.Video;
 import com.weibin.service.UserService;
-import com.weibin.vo.PageResult;
 import com.weibin.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,26 +25,42 @@ public class UserController {
 
     // 获取单个用户信息
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id) {
-        return userService.getUserById(id);
+    public Result<User> getUser(@PathVariable Long id) {
+        User user = userService.getUserById(id);
+        if (user != null) {
+            return Result.success(user);
+        }
+        return Result.error(404, "用户不存在");
     }
 
     // 创建新用户
     @PostMapping
-    public User createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    public Result<User> createUser(@RequestBody User user) {
+        int result = userService.insert(user);
+        if (result > 0) {
+            return Result.success(user, "创建成功");
+        }
+        return Result.error("创建失败");
     }
 
     // 更新用户信息
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User user) {
+    public Result<User> updateUser(@PathVariable Long id, @RequestBody User user) {
         user.setUserId(id);
-        return userService.updateUser(user);
+        int result = userService.update(user);
+        if (result > 0) {
+            return Result.success(user, "更新成功");
+        }
+        return Result.error("更新失败");
     }
 
     // 删除用户
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
+    public Result<Void> deleteUser(@PathVariable Integer id) {
+        int result = userService.delete(id);
+        if (result > 0) {
+            return Result.success(null, "删除成功");
+        }
+        return Result.error(404, "用户不存在");
     }
 }

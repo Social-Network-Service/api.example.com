@@ -1,12 +1,17 @@
 package com.weibin.service;
 
 import com.weibin.entity.User;
+
 import java.util.List;
 
 public interface UserService {
     List<User> getAllUsers();
+
     User getUserById(Long id);
-    User createUser(User user);
-    User updateUser(User user);
-    void deleteUser(Long id);
+
+    int insert(User user);
+
+    int update(User user);
+
+    int delete(Integer id);
 }
