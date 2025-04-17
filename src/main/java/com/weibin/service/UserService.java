@@ -5,9 +5,9 @@ import com.weibin.entity.User;
 import java.util.List;
 
 public interface UserService {
-    List<User> getAllUsers();
+    List<User> getAll();
 
-    User getUserById(Long id);
+    User getById(Long id);
 
     int insert(User user);
 
