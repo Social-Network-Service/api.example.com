@@ -1,11 +1,11 @@
 # api.social.com
 
-## 开发环境：
+## 开发环境
 
 * java8
 * tomcat 9.0.100
 
-## 项目结构：
+## 项目结构
 
 ```
 api.example.com/
