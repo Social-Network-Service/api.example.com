@@ -11,6 +11,8 @@ public interface UserMapper {
 
     User selectById(Long id);
 
+    User selectByUsername(String username);
+
     int insert(User user);
 
     int update(User user);

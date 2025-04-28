@@ -22,6 +22,10 @@
         SELECT * FROM user WHERE user_id = #{id}
     </select>
 
+    <select id="selectByUsername" resultMap="UserResultMap">
+        SELECT * FROM user WHERE user_name = #{username}
+    </select>
+
     <insert id="insert" parameterType="com.weibin.entity.User" useGeneratedKeys="true" keyProperty="userId">
         INSERT INTO user(user_name, password, email, phone, status)
         VALUES(#{userName}, #{password}, #{email}, #{phone}, #{status})
