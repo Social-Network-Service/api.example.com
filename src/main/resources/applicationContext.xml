@@ -35,6 +35,16 @@
     <!-- 将图片/JS/CSS等静态资源排除在外，可以提高执行效率 -->
     <mvc:default-servlet-handler/>
 
+    <!-- 配置登录拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/sys/login"/>
+            <mvc:exclude-mapping path="/sys/registry"/>
+            <bean class="com.weibin.filter.LoginFilter"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!-- MyBatis与Spring的整合配置 -->
     <!-- 1. 配置数据源 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
