@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -25,10 +26,12 @@ public class SystemController {
     // 登陆过期时间10分钟
     private static int expirationTime = 60*10;
 
-    @RequestMapping("/login")
-    public Result login(String username, String password, HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping(value = "/login", consumes = "application/json")
+    public Result login(@RequestBody com.weibin.dto.LoginDTO loginDTO, HttpServletRequest request, HttpServletResponse response) {
         try {
             // 参数校验
+            String username = loginDTO.getUsername();
+            String password = loginDTO.getPassword();
             if (username == null || username.trim().isEmpty()) {
                 throw new RuntimeException("用户名不能为空");
             }
