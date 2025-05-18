@@ -14,7 +14,7 @@ create table user(
 
 -- 添加测试数据
 INSERT INTO user (user_name, password, email, phone, status) VALUES
-('admin', 'admin123', 'admin@example.com', '13800138000', 1),
+('admin', '123456', 'admin@example.com', '13800138000', 1),
 ('user1', 'user123', 'user1@example.com', '13800138001', 1),
 ('user2', 'user123', 'user2@example.com', '13800138002', 1),
 ('testuser', 'test123', 'test@example.com', '13800138003', 1);
